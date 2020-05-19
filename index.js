@@ -13,21 +13,29 @@ try {
   const prNumber = contextPullRequest.number;
 
   const patternToCheck = core.getInput("pattern");
+  console.log(patternToCheck);
+  const regex = new RegExp(patternToCheck);
+
   const labelToAdd = core.getInput("label");
   const labels = [labelToAdd];
 
   const repoToken = core.getInput("repo-token");
   const octokit = new github.GitHub(repoToken);
 
-  octokit.issues
-    .addLabels({
-      ...github.context.repo,
-      issue_number: prNumber,
-      labels,
-    })
-    .then((result) => {
-      console.log(result);
-    });
+  if (regex.test(prTitle)) {
+    octokit.issues
+      .addLabels({
+        ...github.context.repo,
+        issue_number: prNumber,
+        labels,
+      })
+      .then((result) => {
+        console.log(result);
+      });
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
 } catch (error) {
   core.setFailed(error.message);
 }
