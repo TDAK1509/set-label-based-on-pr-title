@@ -12,7 +12,7 @@ try {
   const prTitle = contextPullRequest.title;
   const prNumber = contextPullRequest.number;
 
-  const patternToCheck = core.getInput("pattern").toLowerCase();
+  const patternToCheck = core.getInput("pattern");
 
   const labelToAdd = core.getInput("label");
   const labels = [labelToAdd];
@@ -20,7 +20,7 @@ try {
   const repoToken = core.getInput("repo-token");
   const octokit = new github.GitHub(repoToken);
 
-  if (prTitle.toLowerCase().includes(patternToCheck)) {
+  if (prTitle.includes(patternToCheck)) {
     octokit.issues
       .addLabels({
         ...github.context.repo,
