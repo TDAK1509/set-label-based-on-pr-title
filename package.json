@@ -1,0 +1,16 @@
+{
+  "name": "set-label-based-on-pr-title",
+  "version": "1.0.0",
+  "description": "Set PR label based on PR title pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github-action",
+    "title",
+    "label"
+  ],
+  "author": "",
+  "license": "MIT"
+}
