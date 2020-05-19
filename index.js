@@ -13,7 +13,8 @@ try {
   const prNumber = contextPullRequest.number;
 
   const patternToCheck = core.getInput("pattern");
-  const label = core.getInput("label");
+  const labelToAdd = core.getInput("label");
+  const labels = [labelToAdd];
 
   const repoToken = core.getInput("repo-token");
   const octokit = new github.GitHub(repoToken);
@@ -21,8 +22,8 @@ try {
   octokit.issues
     .addLabels({
       ...github.context.repo,
-      number: prNumber,
-      labels: label,
+      issue_number: prNumber,
+      labels,
     })
     .then((result) => {
       console.log(result);
