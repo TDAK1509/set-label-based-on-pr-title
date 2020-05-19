@@ -7,6 +7,9 @@ inputs:
   label:
     description: "PR label to set if matches the pattern"
     required: true
+  repo-token:
+    description: "Repo GITHUB_TOKEN"
+    required: true
 runs:
   using: "node12"
   main: "index.js"
