@@ -1,13 +1,12 @@
 name: "Set PR label"
 description: "Set PR label based on PR title's pattern"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
+  pattern:
+    description: "PR title regex pattern"
     required: true
-    default: "World"
-outputs:
-  time: # id of output
-    description: "The time we greeted you"
+  label:
+    description: "PR label to set if matches the pattern"
+    required: true
 runs:
   using: "node12"
   main: "index.js"
