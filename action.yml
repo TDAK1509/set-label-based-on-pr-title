@@ -1,8 +1,8 @@
 name: "Set PR label"
 description: "Set PR label based on PR title's pattern"
 inputs:
-  pattern:
-    description: "PR title regex pattern"
+  has-word:
+    description: "PR title has this word"
     required: true
   label:
     description: "PR label to set if matches the pattern"
