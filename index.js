@@ -31,15 +31,19 @@ try {
   });
 
   if (labelsToAdd.length > 0) {
-    octokit.issues.addLabels({
-      ...github.context.repo,
-      issue_number: prNumber,
-      labels: labelsToAdd,
-    }).then(() => {
-      console.log(`These labels were added automatically: ${labelsToAdd.join(", ")}.`)
-    });
+    octokit.issues
+      .addLabels({
+        ...github.context.repo,
+        issue_number: prNumber,
+        labels: labelsToAdd,
+      })
+      .then(() => {
+        console.log(
+          `These labels were added automatically: ${labelsToAdd.join(", ")}.`
+        );
+      });
   } else {
-    console.log("No label was added.").
+    console.log("No label was added.");
   }
 } catch (error) {
   core.setFailed(error.message);
