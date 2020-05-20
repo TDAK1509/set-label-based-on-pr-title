@@ -25,7 +25,7 @@ try {
   const labelsToAdd = [];
 
   words.forEach((word, index) => {
-    if (prTitleLowerCase.inclues(word.toLowerCase())) {
+    if (prTitleLowerCase.includes(word.toLowerCase())) {
       labelsToAdd.push(labels[index]);
     }
   });
