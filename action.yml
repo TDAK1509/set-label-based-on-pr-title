@@ -1,11 +1,11 @@
 name: "Set PR label"
 description: "Set PR label based on PR title's pattern"
 inputs:
-  has-word:
-    description: "PR title has this word"
+  words:
+    description: "Array of words which PR title contains"
     required: true
-  label:
-    description: "PR label to set if matches the pattern"
+  labels:
+    description: "Array of labels, if PR title contains words[i], apply label[i]"
     required: true
   repo-token:
     description: "Repo GITHUB_TOKEN"
