@@ -25,6 +25,6 @@ jobs:
 
 - Explain the variables:
 
-  - `words`: Words that your PR contains (array of words).
+  - `words`: Words that your PR contains (array of words). **Case insensitive**.
 
   - `labels`: Array with same length with `words`. If you PR contains `words[i]`, add label `labels[i]`.
