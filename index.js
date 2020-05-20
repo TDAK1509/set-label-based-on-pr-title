@@ -21,18 +21,11 @@ try {
   const octokit = new github.GitHub(repoToken);
 
   if (prTitle.includes(patternToCheck)) {
-    octokit.issues
-      .addLabels({
-        ...github.context.repo,
-        issue_number: prNumber,
-        labels,
-      })
-      .then((result) => {
-        console.log(result);
-      });
-    console.log("Yes");
-  } else {
-    console.log("No");
+    octokit.issues.addLabels({
+      ...github.context.repo,
+      issue_number: prNumber,
+      labels,
+    });
   }
 } catch (error) {
   core.setFailed(error.message);
