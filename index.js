@@ -25,7 +25,11 @@ try {
       ...github.context.repo,
       issue_number: prNumber,
       labels,
+    }).then(() => {
+      console.log(`Label "${labelToAdd}" was added automatically.`)
     });
+  } else {
+    console.log("No label was added.").
   }
 } catch (error) {
   core.setFailed(error.message);
