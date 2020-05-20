@@ -12,6 +12,7 @@ try {
   }
 
   const prTitle = contextPullRequest.title;
+  const prTitleLowerCase = prTitle.toLowerCase();
   const prNumber = contextPullRequest.number;
 
   // Get injected inputs
@@ -24,7 +25,7 @@ try {
   const labelsToAdd = [];
 
   words.forEach((word, index) => {
-    if (prTitle.inclues(word)) {
+    if (prTitleLowerCase.inclues(word.toLowerCase())) {
       labelsToAdd.push(labels[index]);
     }
   });
