@@ -14,7 +14,7 @@ jobs:
   auto-filling-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Add labels based on PR title hihi
+      - name: Add labels based on PR title
         uses: TDAK1509/set-label-based-on-pr-title@v1
         with:
           words: word1;word2;word3
