@@ -1,5 +1,7 @@
 name: "Set PR label"
 description: "Set PR label based on PR title's pattern"
+author: TDAK <dbcgdhh@gmail.com>
+
 inputs:
   words:
     description: "Array of words which PR title contains"
@@ -10,6 +12,11 @@ inputs:
   repo-token:
     description: "Repo GITHUB_TOKEN"
     required: true
+
+branding:
+  icon: "tag"
+  color: "yellow"
+
 runs:
   using: "node12"
   main: "index.js"

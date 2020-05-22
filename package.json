@@ -4,14 +4,14 @@
   "description": "Set PR label based on PR title pattern",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "github-action",
     "title",
     "label"
   ],
-  "author": "",
+  "author": "TDAK <dbcgdhh@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.4",
