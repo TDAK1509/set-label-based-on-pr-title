@@ -1,4 +1,4 @@
-name: "Set PR label"
+name: "Set PR labels based on PR title"
 description: "Set PR label based on PR title's pattern"
 author: TDAK <dbcgdhh@gmail.com>
 
